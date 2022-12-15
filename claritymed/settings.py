@@ -127,8 +127,7 @@ STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR , "static"),
-    'D:/GitHub/ClarityMed/ClarityMedProject/claritymedapp/static',
-    'D:/PROJECT/ClarityMed/ClarityMedProject/claritymedapp/static',
+    'C:/GitHub/ClarityMed/claritymedapp/static'
 ]
 
 # Default primary key field type
