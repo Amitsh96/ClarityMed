@@ -130,6 +130,8 @@ STATICFILES_DIRS = [
 
     'C:/GitHub/ClarityMed/claritymedapp/static',
 
+    'D:/GitHub/ClarityMed/claritymedapp/static'
+
     'D:/PROJECT/ClarityMed/claritymedapp/static',
 
 ]
