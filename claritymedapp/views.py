@@ -176,7 +176,8 @@ def dashboardrecep(request):
 @allowed_users(allowed_roles=['recep_acc','admin']) 
 def dashrecepclient(request):
     user_count = User.objects.filter(groups__name='client_acc').count()
-    return render(request, 'recep-dash\dashrecepclient.html',{"user_count":user_count})
+    user_list=User.objects.filter(groups__name__in=['client_acc'])
+    return render(request, 'recep-dash\dashrecepclient.html',{"user_count":user_count,"user_list":user_list})
 
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['recep_acc','admin']) 
