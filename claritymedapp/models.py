@@ -7,11 +7,11 @@ from django.db import models
 # Create your models here.
 
 class survey(models.Model):
-    cleaning= models.CharField('Cleaning',max_length=20)
-    security= models.CharField('Security',max_length=20)
-    treatment= models.CharField('Treatment',max_length=20)
-    facilities= models.CharField('Facilities',max_length=20)
-    food= models.CharField('Food',max_length=20)
+    cleaning= models.CharField('רמת נקיון בבית החולים',max_length=20)
+    security= models.CharField('רמת האבטחה בבית החולים',max_length=20)
+    treatment= models.CharField('הטיפול הרפואי שקיבלת',max_length=20)
+    facilities= models.CharField('תחזוקת המקום (שירותים, גינון וכולי)',max_length=20)
+    food= models.CharField('רמת האוכל המוגש בבית החולים',max_length=20)
     
 
     

@@ -13,12 +13,15 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
 from django.contrib.auth.forms import UserCreationForm
-from .forms import CreateUserForm
+from .forms import CreateUserForm, SurveyForm
 from django.contrib.auth.models import Group
 from django.contrib.auth import authenticate,login,logout
 from .decorators import unauthenticated_user,allowed_users
+
 from django.contrib.auth.models import User
 from django.db.models import Count
+
+from .models import survey
 
 db_connection = mysql.connector.connect(
     host="localhost",
@@ -145,7 +148,17 @@ def dashclientparking(request):
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['client_acc','admin']) 
 def dashclientseker(request):
-    return render(request, 'client-dash\dashclientseker.html')
+    submitted = False
+    if request.method == "POST":
+        form = SurveyForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('dashclientseker?submitted=True')
+    else:
+        form = SurveyForm
+        if 'submitted' in request.GET:
+            submitted = True
+    return render(request, 'client-dash\dashclientseker.html', {'form':form, 'submitted':submitted})
 
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['client_acc','admin']) 
