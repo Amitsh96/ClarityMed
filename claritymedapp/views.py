@@ -17,6 +17,9 @@ from .forms import CreateUserForm
 from django.contrib.auth.models import Group
 from django.contrib.auth import authenticate,login,logout
 from .decorators import unauthenticated_user,allowed_users
+from django.contrib.auth.models import User
+from django.db.models import Count
+
 db_connection = mysql.connector.connect(
     host="localhost",
     user="root",
@@ -24,7 +27,6 @@ db_connection = mysql.connector.connect(
 )
 cursor = db_connection.cursor()
 print(db_connection)
-
 
 def index(request):
     return render(request, 'index.html')
@@ -160,7 +162,8 @@ def dashboardrecep(request):
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['recep_acc','admin']) 
 def dashrecepclient(request):
-    return render(request, 'recep-dash\dashrecepclient.html')
+    user_count = User.objects.filter(groups__name='client_acc').count()
+    return render(request, 'recep-dash\dashrecepclient.html',{"user_count":user_count})
 
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['recep_acc','admin']) 
