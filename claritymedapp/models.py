@@ -22,6 +22,7 @@ class doc_app(models.Model):
     date_app= models.DateField('תאריך טיפול')
     
 
+
     
 
 

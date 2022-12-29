@@ -13,10 +13,11 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
 from django.contrib.auth.forms import UserCreationForm
-from .forms import CreateUserForm, SurveyForm , doc_app_form
+from .forms import CreateUserForm, SurveyForm , doc_app_form 
 from django.contrib.auth.models import Group
 from django.contrib.auth import authenticate,login,logout
 from .decorators import unauthenticated_user,allowed_users
+from django.contrib.auth import get_user_model
 
 from django.contrib.auth.models import User
 from django.db.models import Count
@@ -105,6 +106,10 @@ def dashboarddoctor(request):
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['doctor_acc','admin']) 
 def dashdoctorclient(request):
+    user_count = User.objects.filter(groups__name='client_acc').count()
+    user_list=User.objects.filter(groups__name__in=['client_acc'])
+
+
     submitted = False
     if request.method == "POST":
         form = doc_app_form(request.POST)
@@ -115,7 +120,7 @@ def dashdoctorclient(request):
         form = doc_app_form
         if 'submitted' in request.GET:
             submitted = True
-    return render(request, 'doctor-dash\dashdoctorclient.html', {'form':form, 'submitted':submitted})
+    return render(request, 'doctor-dash\dashdoctorclient.html', {'user_count':user_count,'user_list':user_list,'form':form, 'submitted':submitted})
 
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['doctor_acc','admin']) 
@@ -138,7 +143,21 @@ def dashboardclient(request):
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['client_acc','admin']) 
 def dashclientappointment(request):
-    return render(request, 'client-dash\dashclientappointment.html')
+    
+    user_list=User.objects.filter(groups__name__in=['doctor_acc'])
+    submitted = False
+    if request.method == "POST":
+        form = doc_app_form(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('dashclientappointment?submitted=True')
+    else:
+        form = doc_app_form
+        if 'submitted' in request.GET:
+            submitted = True
+   
+    return render(request, 'client-dash\dashclientappointment.html',{'form':form, 'submitted':submitted,'user_list':user_list})
+   
 
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['client_acc','admin'])   
@@ -185,9 +204,22 @@ def dashboardrecep(request):
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['recep_acc','admin']) 
 def dashrecepclient(request):
+
     user_count = User.objects.filter(groups__name='client_acc').count()
     user_list=User.objects.filter(groups__name__in=['client_acc'])
-    return render(request, 'recep-dash\dashrecepclient.html',{"user_count":user_count,"user_list":user_list})
+
+    submitted = False
+    if request.method == "POST":
+        form = doc_app_form(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('dashrecepclient?submitted=True')
+    else:
+        form = doc_app_form
+        if 'submitted' in request.GET:
+            submitted = True
+   
+    return render(request, 'recep-dash\dashrecepclient.html',{'user_count':user_count,'user_list':user_list,'form':form, 'submitted':submitted})
 
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['recep_acc','admin']) 
