@@ -22,7 +22,7 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
 from django.db.models import Count
 
-from .models import survey
+from .models import survey,NavClass
 
 db_connection = mysql.connector.connect(
     host="localhost",
@@ -193,6 +193,35 @@ def dashclientseker(request):
 @allowed_users(allowed_roles=['client_acc','admin']) 
 def dashclienttreatment(request):
     return render(request, 'client-dash\dashclienttreatment.html')
+
+@login_required(login_url='login')
+@allowed_users(allowed_roles=['client_acc','admin']) 
+def dashclientNAV(request):
+    return render(request, 'client-dash\dashclientNAV.html')
+
+@login_required(login_url='login')
+@allowed_users(allowed_roles=['client_acc','admin']) 
+def nav1(request):
+    nav=NavClass.objects.filter(name_class='General')
+    return render(request, 'navs/nav1.html',{'nav':nav})
+
+@login_required(login_url='login')
+@allowed_users(allowed_roles=['client_acc','admin']) 
+def nav2(request):
+    nav=NavClass.objects.filter(name_class='Neurology')
+    return render(request, 'navs/nav2.html',{'nav':nav})
+
+@login_required(login_url='login')
+@allowed_users(allowed_roles=['client_acc','admin']) 
+def nav3(request):
+    nav=NavClass.objects.filter(name_class='Cardiology')
+    return render(request, 'navs/nav3.html',{'nav':nav})
+
+@login_required(login_url='login')
+@allowed_users(allowed_roles=['client_acc','admin']) 
+def nav4(request):
+    nav=NavClass.objects.filter(name_class='Physiotherapy')
+    return render(request, 'navs/nav4.html',{'nav':nav})
 #----------ENDCLIENT----------#
 
 #----------RECEP----------#
