@@ -5,6 +5,17 @@ from django.contrib.auth.models import User
 from django.db import models
 
 # Create your models here.
+
+class clients1(models.Model):
+    name_client=models.CharField('שם מטופל',null=True,max_length=50)
+    id_c=models.CharField('תז מטופל',null=True,max_length=10)
+    phone=models.CharField('מספר טלפון',null=True,max_length=10)
+    status=models.CharField('סטטוס מטופל',null=True,max_length=50)
+    class_c=models.CharField('מחלקה',null=True,max_length=50)
+
+    def __str__(self):
+        return self.name_client
+
 class NavClass(models.Model):
     name_class=models.CharField('class name',null=True,max_length=50)
     navs = models.TextField()

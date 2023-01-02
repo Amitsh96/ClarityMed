@@ -13,7 +13,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
 from django.contrib.auth.forms import UserCreationForm
-from .forms import CreateUserForm, SurveyForm , doc_app_form 
+from .forms import CreateUserForm, SurveyForm , doc_app_form,client_add 
 from django.contrib.auth.models import Group
 from django.contrib.auth import authenticate,login,logout
 from .decorators import unauthenticated_user,allowed_users
@@ -101,7 +101,17 @@ def dashboard(request):
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['doctor_acc','admin']) 
 def dashboarddoctor(request):
-    return render(request, 'doctor-dash\dashboarddoctor.html')
+    submitted = False
+    if request.method == "POST":
+        form = client_add(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('dashboarddoctor?submitted=True')
+    else:
+        form = client_add
+        if 'submitted' in request.GET:
+            submitted = True
+    return render(request, 'doctor-dash\dashboarddoctor.html',{'form':form, 'submitted':submitted})
 
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['doctor_acc','admin']) 
