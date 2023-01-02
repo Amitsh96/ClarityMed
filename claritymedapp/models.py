@@ -5,6 +5,12 @@ from django.contrib.auth.models import User
 from django.db import models
 
 # Create your models here.
+class NavClass(models.Model):
+    name_class=models.CharField('class name',null=True,max_length=50)
+    navs = models.TextField()
+
+    def __str__(self):
+        return self.name_class
 
 class survey(models.Model):
     cleaning= models.CharField('רמת נקיון בבית החולים',max_length=20)

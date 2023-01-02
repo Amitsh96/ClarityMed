@@ -29,6 +29,11 @@ urlpatterns = [
     path('dashclientparking', views.dashclientparking, name="dashclientparking"),
     path('dashclientseker', views.dashclientseker, name="dashclientseker"),
     path('dashclienttreatment', views.dashclienttreatment, name="dashclienttreatment"),
+    path('dashclientNAV', views.dashclientNAV, name="dashclientNAV"),
+    path('nav1', views.nav1, name="nav1"),
+    path('nav2', views.nav2, name="nav2"),
+    path('nav3', views.nav3, name="nav3"),
+    path('nav4', views.nav4, name="nav4"),
     #----------ENDCLIENT----------#
 
     #----------DOCTOR----------#

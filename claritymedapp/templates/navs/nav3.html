@@ -22,32 +22,30 @@
       </div>
     </div>
     <div class="view">
+
       <div class="content"> <!-- CONTENT CONTENT -->
-        {% if submitted %}
-          <p>
-           <strong>הטופס הוגש בהצלחה!</strong>
-          </p>
-        {% else %}
+
 
         <div class="text-center">
           <i class="far fa-file-alt fa-4x mb-3 text-primary"></i>
           <p>
-            <strong>הדעה שלך חשובה לנו!</strong>
+            <strong> <li></i><a href="dashclientNAV"> לחץ כאן לחזרה לתפריט ניווט</a></li></strong>
           </p>
-          <p>
-            יש לרשום את מידת שביעות הרצון באופן הבא 
-            <strong>רע מאוד, רע ,בינוני, טוב, טוב מאוד</strong>
-          </p>
+        
+        
         </div>
-        <form action="" method=POST>
-          {% csrf_token %}
-          {{ form.as_p }}
-          <input type="submit" value="submit" 
-          class="btn btn-secondary">
 
-
-        </form>
-        {% endif %}
+        <div class="text-center">
+          <i class="far fa-file-alt fa-4x mb-3 text-primary"></i>
+          <p>
+            <strong>דרכי הגעה למחלקה קרדיולוגיה:</strong>
+          </p>
+        
+          {%for item in nav%}
+          {{item.navs}}
+          {%endfor%}
+        </div>
+        
         
       </div>
     </div>
