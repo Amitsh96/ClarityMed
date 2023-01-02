@@ -23,6 +23,35 @@
 
       <div class="content"> <!-- CONTENT CONTENT -->
         
+
+        
+        <div>
+        
+            {% for s in surv%}
+            <table border="1" class="tb">
+              <tr> 
+                 <th></th>
+                 <th>ניקיון</th>
+                 <th>אבטחה</th>
+                 <th>טיפול</th>
+                 <th>תחזוקה</th>
+                 <th>אוכל</th>
+               </tr>
+               <tr>
+                 <th>SURVEY {{s.id}}: </th>
+                 <td>{{s.cleaning}}</td>
+                 <td>{{s.security}}</td>
+                 <td>{{s.treatment}}</td>
+                 <td>{{s.facilities}}</td>
+                 <td>{{s.food}}</td>
+               </tr>
+              
+             </table>
+                
+            {% endfor %}
+          
+        </div>
+         
       </div>
     </div>
   </div>
@@ -298,4 +327,7 @@ body {
   clear: both;
 }
 
+.tb { border-collapse: collapse; width:300px; }
+.tb th, .tb td { padding: 5px; border: solid 1px #777; }
+.tb th { background-color: lightblue; }
 </style>

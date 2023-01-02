@@ -116,8 +116,8 @@ def dashboarddoctor(request):
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['doctor_acc','admin']) 
 def dashdoctorclient(request):
-    user_count = User.objects.filter(groups__name='client_acc').count()
-    user_list=User.objects.filter(groups__name__in=['client_acc'])
+    user_count = clients1.objects.count()
+    user_list=clients1.objects.all()
 
 
     submitted = False
@@ -154,7 +154,6 @@ def dashboardclient(request):
 @allowed_users(allowed_roles=['client_acc','admin']) 
 def dashclientappointment(request):
     
-    user_list=User.objects.filter(groups__name__in=['doctor_acc'])
     submitted = False
     if request.method == "POST":
         form = doc_app_form(request.POST)
@@ -166,7 +165,7 @@ def dashclientappointment(request):
         if 'submitted' in request.GET:
             submitted = True
    
-    return render(request, 'client-dash\dashclientappointment.html',{'form':form, 'submitted':submitted,'user_list':user_list})
+    return render(request, 'client-dash\dashclientappointment.html',{'form':form, 'submitted':submitted})
    
 
 @login_required(login_url='login')
@@ -238,14 +237,24 @@ def nav4(request):
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['recep_acc','admin']) 
 def dashboardrecep(request):
-    return render(request, 'recep-dash\dashboardrecep.html')
+    submitted = False
+    if request.method == "POST":
+        form = client_add(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('dashboardrecep?submitted=True')
+    else:
+        form = client_add
+        if 'submitted' in request.GET:
+            submitted = True
+    return render(request, 'recep-dash\dashboardrecep.html',{'form':form})
 
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['recep_acc','admin']) 
 def dashrecepclient(request):
 
-    user_count = User.objects.filter(groups__name='client_acc').count()
-    user_list=User.objects.filter(groups__name__in=['client_acc'])
+    user_count = clients1.objects.count()
+    user_list=clients1.objects.all()
 
     submitted = False
     if request.method == "POST":
@@ -273,7 +282,8 @@ def dashrecepinfo(request):
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['recep_acc','admin']) 
 def dashrecepreview(request):
-    return render(request, 'recep-dash\dashrecepreview.html')
+    surv=survey.objects.all()
+    return render(request, 'recep-dash\dashrecepreview.html',{'surv':surv})
 
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['recep_acc','admin']) 
