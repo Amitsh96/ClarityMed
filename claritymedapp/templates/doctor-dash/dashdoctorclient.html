@@ -28,16 +28,24 @@
           <div class="title">מספר מטופלים : {{user_count}}</div>
           <ul>
            
-              
-              <div>
-                <select>
-                  <option>--מטופלים--</option>
-                  {% for user in user_list%}
-                  <option>{{user}}</option>
-                  {% endfor %}
-                </select>
-              </div>
-               
+           
+            <div>
+              {% for user in user_list%}
+              <table border="1" class="tb">
+                <tr> 
+                   <th></th>
+                   <th>שם</th>
+                   <th>תעודת זהות </th>
+                 </tr>
+                 <tr>
+                   <th>Client {{user.id}}: </th>
+                   <td>{{user.name_client}}</td>
+                   <td>{{user.id_c}}</td>
+                 </tr>
+                
+               </table>
+              {% endfor %}
+            </div>  
               
       </div>
 
@@ -340,5 +348,7 @@ body {
 .clear {
   clear: both;
 }
-
+.tb { border-collapse: collapse; width:700px; }
+.tb th, .tb td { padding: 7px; border: solid 2px #777; }
+.tb th { background-color: lightblue; }
 </style>
