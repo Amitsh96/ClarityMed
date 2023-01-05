@@ -28,23 +28,29 @@
           <ul>
            
               
-          <div>
-            {% for user in user_list%}
-            <table border="1" class="tb">
-              <tr> 
-                 <th></th>
-                 <th>שם</th>
-                 <th>תעודת זהות </th>
-               </tr>
-               <tr>
-                 <th>Client {{user.id}}: </th>
-                 <td>{{user.name_client}}</td>
-                 <td>{{user.id_c}}</td>
-               </tr>
-              
-             </table>
-            {% endfor %}
-          </div>      
+            <div>
+              {% for user in user_list%}
+              <table border="1" class="tb">
+                <tr> 
+                   <th></th>
+                   <th>שם</th>
+                   <th>תעודת זהות </th>
+                   <th>טלפון</th>
+                   <th>סטטוס מטופל</th>
+                   <th>מחלקה</th>
+                 </tr>
+                 <tr>
+                   <th>Client {{user.id}}: </th>
+                   <td>{{user.name_client}}</td>
+                   <td>{{user.id_c}}</td>
+                   <td>{{user.phone}}</td>
+                   <td>{{user.status}}</td>
+                   <td>{{user.class_c}}</td>
+                 </tr>
+                
+               </table>
+              {% endfor %}
+            </div>      
               
       </div>
       {% if submitted %}

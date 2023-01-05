@@ -23,5 +23,5 @@ class doc_app_form(ModelForm):
 class client_add(ModelForm):
     class Meta:
         model=clients1
-        fields=('name_client', 'id_c', 'phone', 'status', 'class_c')
+        fields=('user','name_client', 'id_c', 'phone', 'status', 'class_c')
 

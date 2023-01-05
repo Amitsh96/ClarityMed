@@ -7,6 +7,7 @@ from django.db import models
 # Create your models here.
 
 class clients1(models.Model):
+    user=models.OneToOneField(User,null=True,on_delete=models.CASCADE)
     name_client=models.CharField('שם מטופל',null=True,max_length=50)
     id_c=models.CharField('תז מטופל',null=True,max_length=10)
     phone=models.CharField('מספר טלפון',null=True,max_length=10)
@@ -32,7 +33,7 @@ class survey(models.Model):
     
 
 class doc_app(models.Model):
-    doc_id= models.CharField('תז רופא',max_length=50)
+    doc_id= models.CharField('מספר רופא',max_length=50)
     doc_name= models.CharField('שם רופא',max_length=50)
     client_id= models.CharField('תז מטופל',max_length=50)
     client_name= models.CharField('שם מטופל',max_length=50)
