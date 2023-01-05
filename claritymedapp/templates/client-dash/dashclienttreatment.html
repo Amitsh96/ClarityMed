@@ -24,7 +24,39 @@
     <div class="view">
 
       <div class="content"> <!-- CONTENT CONTENT -->
-        
+    
+        <table border="1" class="tb">
+          <tr>
+            
+            <th>  פרטי טיפול </th>
+            
+          </tr>
+          
+      
+         </table>
+        <table border="1" class="tb">
+          <tr>
+            <th>שם מטופל</th>
+            <td>{{request.user.clients1.name_client}} </td>
+          </tr>
+          <tr>
+            <th>תעודת זהות</th>
+            <td>{{request.user.clients1.id_c}} </td>
+          </tr>
+          <tr>
+            <th>מספר טלפון</th>
+            <td>{{request.user.clients1.phone}} </td>
+          </tr>
+          <tr>
+            <th>סטטוס טיפול</th>
+            <td> {{request.user.clients1.status}} </td>
+          </tr>
+          <tr>
+            <th>מחלקה בה מטופל</th>
+            <td>{{request.user.clients1.class_c}} </td>
+          </tr>
+         </table>
+
       </div>
     </div>
   </div>
@@ -299,5 +331,7 @@ body {
 .clear {
   clear: both;
 }
-
+.tb { border-collapse: collapse; width:700px; }
+.tb th, .tb td { padding: 7px; border: solid 2px #777; }
+.tb th { background-color: lightblue; }
 </style>

@@ -24,7 +24,35 @@
     <div class="view">
 
       <div class="content"> <!-- CONTENT CONTENT -->
-        
+        <table border="1" class="tb">
+          <tr>
+            
+            <th>מקומות חניה פנויים</th>
+            
+          </tr>
+          
+      
+         </table>
+        <table border="1" class="tb">
+          <tr>
+            <th>Parking 1 : {{arr.0}} </th>
+            <th>Parking 2 : {{arr.1}}</th>
+            <th>Parking 3 : {{arr.2}}</th>
+          </tr>
+          <tr>
+            
+            <th>Parking 4 : {{arr.3}}</th>
+            <th>Parking 5 : {{arr.4}}</th>
+            <th>Parking 6 : {{arr.5}}</th>
+          </tr>
+          <tr>
+            <th>Parking 7 : {{arr.6}} </th>
+            <th>Parking 8 : {{arr.7}}</th>
+            <th>Parking 9 : {{arr.8}}</th>
+          </tr>
+         </table>
+
+
       </div>
     </div>
   </div>
@@ -299,5 +327,7 @@ body {
 .clear {
   clear: both;
 }
-
+.tb { border-collapse: collapse; width:700px; }
+.tb th, .tb td { padding: 7px; border: solid 2px #777; }
+.tb th { background-color: lightblue; }
 </style>

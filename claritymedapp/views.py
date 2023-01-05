@@ -1,3 +1,4 @@
+from gettext import npgettext
 from random import random
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
@@ -130,7 +131,7 @@ def dashdoctorclient(request):
         form = doc_app_form
         if 'submitted' in request.GET:
             submitted = True
-    return render(request, 'doctor-dash\dashdoctorclient.html', {'user_count':user_count,'user_list':user_list,'form':form, 'submitted':submitted})
+    return render(request, 'doctor-dash\dashdoctorclient.html', {'user_count':user_count,'user_list':user_list,'form':form,'submitted':submitted})
 
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['doctor_acc','admin']) 
@@ -153,7 +154,7 @@ def dashboardclient(request):
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['client_acc','admin']) 
 def dashclientappointment(request):
-    
+    user_list=User.objects.filter(groups__name='doctor_acc')
     submitted = False
     if request.method == "POST":
         form = doc_app_form(request.POST)
@@ -165,7 +166,7 @@ def dashclientappointment(request):
         if 'submitted' in request.GET:
             submitted = True
    
-    return render(request, 'client-dash\dashclientappointment.html',{'form':form, 'submitted':submitted})
+    return render(request, 'client-dash\dashclientappointment.html',{'form':form, 'submitted':submitted,'user_list':user_list})
    
 
 @login_required(login_url='login')
@@ -181,7 +182,8 @@ def dashclientonlinestore(request):
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['client_acc','admin']) 
 def dashclientparking(request):
-    return render(request, 'client-dash\dashclientparking.html')
+    arr=random.choices(["פנוי","תפוס"],k=9)
+    return render(request, 'client-dash\dashclientparking.html',{'arr':arr})
 
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['client_acc','admin']) 
