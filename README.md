@@ -10,9 +10,10 @@ installation:
 4. start server from xampp.
 5. in visual code, type in the terminal: ' python manage.py makemigrations ' right after that command , run this line :  ' python manage.py migrate ' this will ensure that youl have the database.
 6. run 'python manage.py createsuperuser' and create an admin user so you can access the site.
-7. access : http://127.0.0.1:8000/admin/ and in useres section add your superuser to the admin group so you can access all urls.
-8. pay attention that the database is empty from all of the products and users we created LOCAL on our computer.
-9. to enjoy the whole site you can create few users from the register site, they will be added automaticlly to the clients group and you can create in  http://127.0.0.1:8000/admin/ the rest of the doctor and receptionist and also all the equipments.
-10. now you can access http://127.0.0.1:8000/claritymedapp/index.
+7. run ' python manage.py runserver ' to run the server.
+8. access : http://127.0.0.1:8000/admin/ and in useres section add your superuser to the admin group so you can access all urls.
+9. pay attention that the database is empty from all of the products and users we created LOCAL on our computer.
+10. to enjoy the whole site you can create few users from the register site, they will be added automaticlly to the clients group and you can create in  http://127.0.0.1:8000/admin/ the rest of the doctor and receptionist and also all the equipments.
+11. now you can access http://127.0.0.1:8000/claritymedapp/index.
 
 ENJOY! 
