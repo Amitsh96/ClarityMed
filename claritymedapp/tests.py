@@ -4,7 +4,7 @@ from django.test import TestCase
 
 from django.contrib.auth.models import User
 from django.test import TestCase
-from .models import survey,doc_app,NavClass,clients1
+from .models import survey,doc_app,NavClass,clients1,recep_eq,order_recep,doc_eq,order_doc
 
 class AuthenticationTestCase(TestCase):
     def setUp(self):
@@ -60,3 +60,35 @@ class doc_appTestCase(TestCase):
     def test_app_created(self):
         app=doc_app.objects.filter(doc_id='204551236',doc_name='Avi',client_id='341552415',client_name='Tomer',date_app='2022-04-02')
         self.assertTrue(app.exists())
+
+class recepTestcase(TestCase):
+    def setUp(self):
+        recep_eq.objects.create(name_eq='bag',price='100',des='adidas bag')
+
+    def test_app_created(self):
+        eq1=recep_eq.objects.filter(name_eq='bag',price='100',des='adidas bag')
+        self.assertTrue(eq1.exists())
+
+class recepOrderTestcase(TestCase):
+    def setUp(self):
+        order_recep.objects.create(qunt1='5',qunt2='10',qunt3='15',qunt4='20',qunt5='25',qunt6='30',qunt7='35',qunt8='40')
+
+    def test_app_created(self):
+        eq1=order_recep.objects.filter(qunt1='5',qunt2='10',qunt3='15',qunt4='20',qunt5='25',qunt6='30',qunt7='35',qunt8='40')
+        self.assertTrue(eq1.exists())
+
+class docTestcase(TestCase):
+    def setUp(self):
+        doc_eq.objects.create(name_eq='bag',price='100',des='adidas bag')
+
+    def test_app_created(self):
+        eq1=doc_eq.objects.filter(name_eq='bag',price='100',des='adidas bag')
+        self.assertTrue(eq1.exists())
+
+class docOrderTestcase(TestCase):
+    def setUp(self):
+        order_doc.objects.create(qunt1='5',qunt2='10',qunt3='15',qunt4='20',qunt5='25',qunt6='30',qunt7='35',qunt8='40')
+
+    def test_app_created(self):
+        eq1=order_doc.objects.filter(qunt1='5',qunt2='10',qunt3='15',qunt4='20',qunt5='25',qunt6='30',qunt7='35',qunt8='40')
+        self.assertTrue(eq1.exists())

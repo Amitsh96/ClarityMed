@@ -10,7 +10,7 @@
       <div class="menu">
         <div class="title">תפריט</div>
         <ul>
-          <li> &#9673 </i><a href="dashboardclient">ראשי</a></li>
+          <li> &#9673 </i><a href="index">ראשי</a></li>
           <li> &#9673 </i><a href="dashclientinfo">מידע אישי</a></li>
           <li> &#9673 </i><a href="dashclientappointment">הזמנת תור</a></li>
           <li> &#9673 </i><a href="dashclienttreatment">הטיפול שלי</a></li>
@@ -55,8 +55,13 @@
             <th>מחלקה בה מטופל</th>
             <td>{{request.user.clients1.class_c}} </td>
           </tr>
+          <tr>
+            <th>זמן המתנה צפוי</th>
+            <td>{{date}} </td>
+          </tr>
          </table>
 
+         
       </div>
     </div>
   </div>

@@ -1,5 +1,7 @@
 from gettext import npgettext
 from random import random
+import datetime
+from random import randrange
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.http import JsonResponse
@@ -14,7 +16,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
 from django.contrib.auth.forms import UserCreationForm
-from .forms import CreateUserForm, SurveyForm , doc_app_form,client_add 
+from .forms import CreateUserForm, SurveyForm , doc_app_form,client_add ,order_rec,order_doctor
 from django.contrib.auth.models import Group
 from django.contrib.auth import authenticate,login,logout
 from .decorators import unauthenticated_user,allowed_users
@@ -136,7 +138,24 @@ def dashdoctorclient(request):
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['doctor_acc','admin']) 
 def dashdoctorequip(request):
-    return render(request, 'doctor-dash\dashdoctorequip.html')
+    supp=doc_eq.objects.all()
+    submitted = False
+    if request.method == "POST":
+        form = order_doctor(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('dashdoctorequip?submitted=True')
+    else:
+        form = order_doctor
+        if 'submitted' in request.GET:
+            submitted = True
+    return render(request, 'doctor-dash\dashdoctorequip.html',{"supp":supp,"form":form,'submitted':submitted})
+
+@login_required(login_url='login')
+@allowed_users(allowed_roles=['doctor_acc','admin']) 
+def dashdoctorequip_status(request):
+    arr=random.choices(["לא במלאי","במלאי"],k=8)
+    return render(request, 'doctor-dash\dashdoctorequip_status.html',{'arr':arr})    
 
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['doctor_acc','admin']) 
@@ -203,7 +222,8 @@ def dashclientseker(request):
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['client_acc','admin']) 
 def dashclienttreatment(request):
-    return render(request, 'client-dash\dashclienttreatment.html')
+    date=datetime.timedelta(minutes=randrange(120))
+    return render(request, 'client-dash\dashclienttreatment.html',{'date':date})
 
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['client_acc','admin']) 
@@ -290,5 +310,17 @@ def dashrecepreview(request):
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['recep_acc','admin']) 
 def dashrecepsupply(request):
-    return render(request, 'recep-dash\dashrecepsupply.html')
+    supp=recep_eq.objects.all()
+    submitted = False
+    if request.method == "POST":
+        form = order_rec(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('dashrecepsupply?submitted=True')
+    else:
+        form = order_rec
+        if 'submitted' in request.GET:
+            submitted = True
+   
+    return render(request, 'recep-dash\dashrecepsupply.html',{"supp":supp,"form":form,'submitted':submitted})
 #----------ENDRECEP----------#

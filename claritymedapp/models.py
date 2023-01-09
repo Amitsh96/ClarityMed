@@ -40,8 +40,50 @@ class doc_app(models.Model):
     date_app= models.DateField('תאריך טיפול')
     
 
+class recep_eq(models.Model):
+    name_eq=models.CharField('שם המוצר',null=True,max_length=50)
+    price = models.CharField('מחיר',null=True,max_length=50)
+    des=models.TextField()
+
+
+    def __str__(self):
+        return self.name_eq
+    
+
+
+
+class order_recep(models.Model):
+     qunt1=models.IntegerField(' כמות חבילת עטים להזמנה ',null=True)
+     qunt2=models.IntegerField(' כמות קלסר משרדי להזמנה ',null=True)
+     qunt3=models.IntegerField(' כמות סיכות לשדכן להזמנה ',null=True)
+     qunt4=models.IntegerField(' כמות תיקי הגשה להזמנה ',null=True)
+     qunt5=models.IntegerField(' כמות שדכן סיכות להזמנה ',null=True)
+     qunt6=models.IntegerField(' כמות מטליות חיטוי להזמנה ',null=True)
+     qunt7=models.IntegerField(' כמות דיו מדפסת להזמנה ',null=True)
+     qunt8=models.IntegerField(' כמות נייר מדפסת להזמנה ',null=True)
 
     
 
+class doc_eq(models.Model):
+    name_eq=models.CharField('שם המוצר',null=True,max_length=50)
+    price = models.CharField('מחיר',null=True,max_length=50)
+    des=models.TextField()
+
+
+    def __str__(self):
+        return self.name_eq
+    
+
+
+
+class order_doc(models.Model):
+     qunt1=models.IntegerField(' כמות כפפות להזמנה ',null=True)
+     qunt2=models.IntegerField(' כמות מסכות להזמנה ',null=True)
+     qunt3=models.IntegerField(' כמות חלוק רפואי להזמנה ',null=True)
+     qunt4=models.IntegerField(' כמות מזרקים להזמנה ',null=True)
+     qunt5=models.IntegerField(' כמות תחבושות להזמנה ',null=True)
+     qunt6=models.IntegerField(' כמות חומר חיטוי להזמנה ',null=True)
+     qunt7=models.IntegerField(' כמות פד גזה להזמנה ',null=True)
+     qunt8=models.IntegerField(' כמות מבחנות להזמנה ',null=True)
 
     

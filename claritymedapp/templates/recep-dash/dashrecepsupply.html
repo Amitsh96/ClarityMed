@@ -22,7 +22,56 @@
     <div class="view">
 
       <div class="content"> <!-- CONTENT CONTENT -->
-        
+      
+    
+        <table border="1" class="tb">
+          <tr>
+            
+            <th> מוצרים להזמנה </th>
+            
+          </tr>
+          
+      
+         </table>
+         
+        <table border="1" class="tb">
+          {% for supp1 in supp%}
+         
+          <tr>
+            <th>שם מוצר</th>
+            <th>מחיר</th>
+            <th>תיאור המוצר</th>
+            
+          </tr>
+          <tr>
+            <td>{{supp1.name_eq}} </td>
+
+            <td>{{supp1.price}} </td>
+          
+            <td>{{supp1.des}} </td>
+          </tr>
+          {% endfor %}
+         </table>
+
+
+     
+    
+         {% if submitted %}
+         <p>
+           <strong>הזמנה בוצעה בהצלחה!</strong>
+         </p>
+         {% else %}
+ 
+          
+         <form class="center" action="" method=POST>
+          {% csrf_token %}
+          {{form.as_p}}
+         <input type="submit" value="submit" 
+         class="btn btn-secondary">
+
+        </form>
+       {% endif %}
+
       </div>
     </div>
   </div>
@@ -297,5 +346,7 @@ body {
 .clear {
   clear: both;
 }
-
+.tb { border-collapse: collapse; width:700px; text-align-last: center; }
+.tb th, .tb td { padding: 7px; border: solid 2px #777;text-align-last: center; }
+.tb th { background-color: lightblue; text-align-last: center;}
 </style>
