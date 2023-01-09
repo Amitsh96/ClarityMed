@@ -10,7 +10,7 @@
       <div class="menu">
         <div class="title">תפריט</div>
         <ul>
-          <li> &#9673 </i><a href="dashboardclient">ראשי</a></li>
+          <li> &#9673 </i><a href="index">ראשי</a></li>
           <li> &#9673 </i><a href="dashclientinfo">מידע אישי</a></li>
           <li> &#9673 </i><a href="dashclientappointment">הזמנת תור</a></li>
           <li> &#9673 </i><a href="dashclienttreatment">הטיפול שלי</a></li>
@@ -24,7 +24,34 @@
     <div class="view">
 
       <div class="content"> <!-- CONTENT CONTENT -->
+        <table border="1" class="tb">
+          <tr>
+            
+            <th> מידע אישי </th>
+            
+          </tr>
+          
+      
+         </table>
+        <table border="1" class="tb">
+          <tr>
+            <th>שם מטופל</th>
+            <td>{{request.user.clients1.name_client}} </td>
+          </tr>
+          <tr>
+            <th>תעודת זהות</th>
+            <td>{{request.user.clients1.id_c}} </td>
+          </tr>
+          <tr>
+            <th>מספר טלפון</th>
+            <td>{{request.user.clients1.phone}} </td>
+          </tr>
+          <tr>
+            <th> אימייל </th>
+            <td> {{request.user.email}} </td>
+          </tr>
         
+         </table>
       </div>
     </div>
   </div>
@@ -299,5 +326,7 @@ body {
 .clear {
   clear: both;
 }
-
+.tb { border-collapse: collapse; width:700px; }
+.tb th, .tb td { padding: 7px; border: solid 2px #777; }
+.tb th { background-color: lightblue; }
 </style>

@@ -40,7 +40,9 @@ urlpatterns = [
     path('dashboarddoctor', views.dashboarddoctor, name="dashboarddoctor"),
     path('dashdoctorclient', views.dashdoctorclient, name="dashdoctorclient"),
     path('dashdoctorequip', views.dashdoctorequip, name="dashdoctorequip"),
+    path('dashdoctorequip_status', views.dashdoctorequip_status, name="dashdoctorequip_status"),
     path('dashdoctorhelp', views.dashdoctorhelp, name="dashdoctorhelp"),
+    
     #----------ENDDOCTOR----------#
 
     #----------RECEP----------#

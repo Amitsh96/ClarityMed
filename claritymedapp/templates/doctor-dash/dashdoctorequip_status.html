@@ -2,7 +2,7 @@
 
 <div class="page">
   <div class="pageHeader">
-    <div class="title">Dashboard מטופל</div>
+    <div class="title">Dashboard רופאים</div>
     <div class="userPanel"><i class="fa fa-chevron-down"></i><span class="username">Hello {{request.user.username}}</span><img src="{% static 'images/medicallogo.png' %}" width="40" height="40"/></div>
   </div>
   <div class="main">
@@ -10,41 +10,52 @@
       <div class="menu">
         <div class="title">תפריט</div>
         <ul>
-          <li> &#9673 </i><a href="index">ראשי</a></li>
-          <li> &#9673 </i><a href="dashclientinfo">מידע אישי</a></li>
-          <li> &#9673 </i><a href="dashclientappointment">הזמנת תור</a></li>
-          <li> &#9673 </i><a href="dashclienttreatment">הטיפול שלי</a></li>
-          <li> &#9673 </i><a href="dashclientonlinestore">הזמנת תרופות אונליין</a></li>
-          <li> &#9673 </i><a href="dashclientseker">סקר שביעות רצון</a></li>
-          <li> &#9673 </i><a href="dashclientparking">סטטוס חניה</a></li>
-          <li> &#9673 </i><a href="dashclientNAV">ניווט</a></li>
+          <li> &#9673 </i><a href="dashboarddoctor"> ראשי </a></li>
+          <li> &#9673 </i><a href="dashdoctorclient"> מטופלים </a></li>
+          <li> &#9673 </i><a href="dashdoctorequip"> ציוד רפואי </a></li>
+          <li> &#9673 </i><a href="dashdoctorequip_status"> ציוד רפואי מלאי</a></li>
+          <li> &#9673 </i><a href="dashdoctorhelp"> קריאה לצוותי עזר </a></li>
+          <li> &#9673 </i><a href="{% url 'logout' %}"> Log Out </a></li>
         </ul>
       </div>
     </div>
     <div class="view">
 
       <div class="content"> <!-- CONTENT CONTENT -->
+        <table border="1" class="tb">
+          <tr>
+            
+            <th>סטטוס מלאי ציוד רפואי</th>
+            
+          </tr>
+          
+      
+         </table>
+        <table border="1" class="tb">
+          <tr>
+            <th>כפפות</th>
+            <th>מסכות</th>
+            <th>חלוק רפואי</th>
+            <th>מזרקים</th>
+            <th>תחבושות</th>
+            <th>חומר חיטוי	</th>
+            <th>פד גזה</th>
+            <th>מבחנות</th>
+          </tr>
+          <tr>
+            <td>{{arr.0}}</td>
+            <td>{{arr.1}}</td>
+            <td>{{arr.2}}</td>
+            <td>{{arr.3}}</td>
+            <td>{{arr.4}}</td>
+            <td>{{arr.5}}</td>
+            <td>{{arr.6}}</td>
+            <td>{{arr.7}}</td>
+            
+          </tr>
+         
+         </table>
 
-
-       
-        <div class="text-center">
-          <i class="far fa-file-alt fa-4x mb-3 text-primary"></i>
-          <p>
-            <strong> <li></i><a href="dashclientNAV"> לחץ כאן לחזרה לתפריט ניווט</a></li></strong>
-          </p>
-        
-        </div>
-           
-        <div class="text-center">
-          <i class="far fa-file-alt fa-4x mb-3 text-primary"></i>
-          <p>
-            <strong>דרכי הגעה למחלקה נוירולוגיה:</strong>
-          </p>
-        
-          {%for item in nav%}
-          {{item.navs}}
-          {%endfor%}
-        </div>
       </div>
     </div>
   </div>
@@ -319,5 +330,8 @@ body {
 .clear {
   clear: both;
 }
+.tb { border-collapse: collapse; width:700px; text-align-last: center; }
+.tb th, .tb td { padding: 7px; border: solid 2px #777;text-align-last: center; }
+.tb th { background-color: lightblue; text-align-last: center;}
 
 </style>
