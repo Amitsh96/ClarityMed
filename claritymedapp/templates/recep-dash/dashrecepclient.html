@@ -1,5 +1,5 @@
 {% load static %}
-
+<title>ClarityMed</title>
 <div class="page">
   <div class="pageHeader">
     <div class="title">Dashboard מזכירה</div>
@@ -10,12 +10,13 @@
       <div class="menu">
         <div class="title">תפריט</div>
         <ul>
+          <li> &#9673 </i><a href="index"> לדף בית </a></li>
           <li> &#9673 </i> <a href = "dashboardrecep">ראשי</a></li>
-          <li> &#9673 </i> <a href = "dashrecepinfo">מידע אישי</a></li>
           <li> &#9673 </i> <a href = "dashrecepclient">מטופלים</a></li>
           <li> &#9673 </i> <a href = "dashrecepsupply">ציוד</a></li>
           <li> &#9673 </i> <a href = "dashrecepreview">סקר שביעות רצון</a></li>
           <li> &#9673 </i> <a href = "dashrecephelp">קריאה לצוותי עזר</a></li>
+          <li> &#9673 </i><a href="{% url 'logout' %}"> Log Out </a></li>
         </ul>
       </div>
     </div>

@@ -100,6 +100,8 @@ def dashboard(request):
 
 
 
+
+
 #----------DOCTOR----------#
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['doctor_acc','admin']) 
@@ -162,6 +164,11 @@ def dashdoctorequip_status(request):
 def dashdoctorhelp(request):
     return render(request, 'doctor-dash\dashdoctorhelp.html')
 #----------ENDDOCTOR----------#
+
+
+
+
+
 
 
 #----------CLIENT----------#
@@ -255,6 +262,12 @@ def nav4(request):
     return render(request, 'navs/nav4.html',{'nav':nav})
 #----------ENDCLIENT----------#
 
+
+
+
+
+
+
 #----------RECEP----------#
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['recep_acc','admin']) 
@@ -295,11 +308,6 @@ def dashrecepclient(request):
 @allowed_users(allowed_roles=['recep_acc','admin']) 
 def dashrecephelp(request):
     return render(request, 'recep-dash\dashrecephelp.html')
-
-@login_required(login_url='login')
-@allowed_users(allowed_roles=['recep_acc','admin']) 
-def dashrecepinfo(request):
-    return render(request, 'recep-dash\dashrecepinfo.html')
 
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['recep_acc','admin']) 

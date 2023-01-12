@@ -43,29 +43,17 @@
       <div class="container">
         <div class="top_contact-container">
           <div class="tel_container">
-            <a href="">
-              <img src="{%static 'images/telephone-symbol-button.png' %}" alt=""> Call : +01 1234567890
-            </a>
+            
           </div>
-          <div class="social-container">
-            <a href="">
-              <img src="{%static 'images/fb.png' %}" alt="" class="s-1">
-            </a>
-            <a href="">
-              <img src="{%static 'images/twitter.png' %}" alt="" class="s-2">
-            </a>
-            <a href="">
-              <img src="{%static 'images/instagram.png' %}" alt="" class="s-3">
-            </a>
-          </div>
+        
         </div>
       </div>
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" href="index">
             <img src="{%static 'images/logo.png' %}" alt="">
             <span>
-              Medion
+             ClarityMed
             </span>
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -83,16 +71,22 @@
                   <a class="nav-link" href="about"> About </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="medicine"> Medicine </a>
+                  <a class="nav-link" href="dashclientonlinestore"> Online Buy </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="buy.html"> Online Buy </a>
+                  <a class="nav-link" href="dashboarddoctor">כניסה רופא</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="news.html"> News </a>
+                  <a class="nav-link" href="dashboardrecep">כניסה מזכירה</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="contact.html">Contact us</a>
+                  <a class="nav-link" href="dashboardclient">כניסה מטופל</a>
+                </li>
+                <li>
+                  <a class="nav-link"> Hello, {{request.user.username}} </a> 
+                </li>
+                <li>
+                  <a class="nav-link" href="{% url 'logout' %}"> Log Out </a>
                 </li>
               </ul>
               <div class="login_btn-contanier ml-0 ml-lg-5">
@@ -127,9 +121,15 @@
       </div>
       <div class="detail-box">
         <p>
-          It is a long established fact that a reader will be distracted by the readable content of a page when looking
-          at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
-          opposed to using 'Content here, content here', making it
+          <h1>About Us</h1>
+          <p>ClarityMed is a hospital management platform that simplifies communication and workflow for doctors, patients, and receptionists.</p>
+          <h2>Our Team</h2>
+          <ul>
+            <li>Tomer Netzer <a href="https://github.com/tomernetzer14">@tomernetzer14</a></li>
+            <li>Omer Rozales <a href="https://github.com/rozales">@rozales</a></li>
+            <li>Amit Shitrit <a href="https://github.com/Amitsh96">@Amitsh96</a></li>
+          </ul>
+          <p>Thank you for choosing ClarityMed.</p>
         </p>
         <div class="d-flex justify-content-center">
           <a href="">
@@ -142,85 +142,12 @@
 
 
 
-  <!-- info section -->
-  <section class="info_section layout_padding2">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3">
-          <div class="info_contact">
-            <h4>
-              Contact
-            </h4>
-            <div class="box">
-              <div class="img-box">
-                <img src="{%static 'images/telephone-symbol-button.png' %}" alt="">
-              </div>
-              <div class="detail-box">
-                <h6>
-                  +01 123567894
-                </h6>
-              </div>
-            </div>
-            <div class="box">
-              <div class="img-box">
-                <img src="{%static 'images/email.png' %}" alt="">
-              </div>
-              <div class="detail-box">
-                <h6>
-                  demo@gmail
-                </h6>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="info_menu">
-            <h4>
-              Menu
-            </h4>
-            <ul class="navbar-nav  ">
-              <li class="nav-item active">
-                <a class="nav-link" href="index">Home <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about"> About </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="medicine"> Medicine </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="buy.html"> Online Buy </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="info_news">
-            <h4>
-              newsletter
-            </h4>
-            <form action="">
-              <input type="text" placeholder="Enter Your email">
-              <div class="d-flex justify-content-center justify-content-md-end mt-3">
-                <button>
-                  Subscribe
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- end info section -->
-
+ 
   <!-- footer section -->
   <section class="container-fluid footer_section">
     <p>
-      &copy; 2019 All Rights Reserved. Design by
-      <a href="https://html.design/">Free Html Templates</a>
+      &copy; 2023 All Rights Reserved. Design by
+       Omer Rozales, Amit Shitrit and Tomer Netzer
     </p>
   </section>
   <!-- footer section -->

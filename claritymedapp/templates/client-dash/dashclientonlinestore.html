@@ -1,5 +1,5 @@
 {% load static %}
-
+<title>ClarityMed</title>
 <div class="page">
   <div class="pageHeader">
     <div class="title">Dashboard מטופל</div>
@@ -18,6 +18,7 @@
           <li> &#9673 </i><a href="dashclientseker">סקר שביעות רצון</a></li>
           <li> &#9673 </i><a href="dashclientparking">סטטוס חניה</a></li>
           <li> &#9673 </i><a href="dashclientNAV">ניווט</a></li>
+          <li> &#9673 </i><a href="{% url 'logout' %}"> Log Out </a></li>
         </ul>
       </div>
     </div>
@@ -28,31 +29,31 @@
           <h1>אנא בחר תרופות להזמנה</h1>
           <input type="checkbox" checked="checked">
           <span class="checkmark"></span>
-          <label class="container">Advil.
+          <label class="container">Advil. 35 NIS
           </label><br>
           <input type="checkbox">
           <span class="checkmark"></span>
-          <label class="container">Acamol.
+          <label class="container">Acamol. 25 NIS
           </label><br>
           <input type="checkbox">
           <span class="checkmark"></span>
-          <label class="container">Dexamol.
+          <label class="container">Dexamol. 25 NIS
           </label><br>
           <input type="checkbox">
           <span class="checkmark"></span>
-          <label class="container">Nurofen.
+          <label class="container">Nurofen. 45 NIS
           </label><br>
           <input type="checkbox">
           <span class="checkmark"></span>
-          <label class="container">Voltaren.
+          <label class="container">Voltaren. 50 NIS
           </label><br>
           <input type="checkbox">
           <span class="checkmark"></span>
-          <label class="container">Allergix.
+          <label class="container">Allergix. 30 NIS
           </label><br>
           <input type="checkbox">
           <span class="checkmark"></span>
-          <label class="container">Optalgin.
+          <label class="container">Optalgin. 35 NIS
           </label><br><br>
           <button type="button" onclick="alert('ההזמנה הושלמה עבור {{request.user.clients1.name_client}}')"> בצע הזמנה </button>
 
