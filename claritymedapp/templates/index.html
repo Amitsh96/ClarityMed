@@ -70,13 +70,7 @@
                   <a class="nav-link" href="about"> About </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="medicine"> Medicine </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="buy"> Online Buy </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="contact.html">Contact us</a>
+                  <a class="nav-link" href="dashclientonlinestore"> Online Buy </a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="dashboarddoctor">כניסה רופא</a>
@@ -88,7 +82,7 @@
                   <a class="nav-link" href="dashboardclient">כניסה מטופל</a>
                 </li>
                 <li>
-                  <a class="nav-link"> Hello, {{request.user.username}} </a> <!-- XXXX  CHEKC CHECK XXXXXXXXX-->
+                  <a class="nav-link"> Hello, {{request.user.username}} </a> 
                 </li>
                 <li>
                   <a class="nav-link" href="{% url 'logout' %}"> Log Out </a>
@@ -135,15 +129,9 @@
                       
                     </h1>
                     <p>
-                      There are many variations of passages of Lorem Ipsum available, but the majority have suffered
-                      alteration in some form, by injected humour, or randomised words which don't look even slightly
-                      believable.
+                      ClarityMed is a hospital services website designed to provide a smooth and convenient experience for patients, doctors and receptionists.
+                       The site offers a variety of features to make it easier for patients to access the medical care they need, including scheduling appointments, treatment status, etc.
                     </p>
-                    <div>
-                      <a href="">
-                        Login | התחברות
-                      </a>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -167,12 +155,10 @@
 
                     </h1>
                     <p>
-                      There are many variations of passages of Lorem Ipsum available, but the majority have suffered
-                      alteration in some form, by injected humour, or randomised words which don't look even slightly
-                      believable.
+                      In ClarityMed as a patient you can buy your medicine online!
                     </p>
                     <div>
-                      <a href="">
+                      <a href="dashclientonlinestore">
                         Buy Now
                       </a>
                     </div>
@@ -259,7 +245,7 @@
               Fast Delivery
             </h5>
             <p>
-              It is a long established fact that a reader will be distracted by
+              Your medicine is on their way!
             </p>
           </div>
         </div>
@@ -292,7 +278,7 @@
               license of government
             </h5>
             <p>
-              It is a long established fact that a reader will be distracted by
+              Approved by the government!
             </p>
           </div>
         </div>
@@ -384,7 +370,7 @@
               support24/7
             </h5>
             <p>
-              It is a long established fact that a reader will be distracted by
+              All the support you need in just a click!
             </p>
           </div>
         </div>
@@ -394,464 +380,7 @@
 
   <!-- end feature section -->
 
-  <!-- discount section -->
 
-  <section class="discount_section">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-3 col-md-5 offset-md-2">
-          <div class="detail-box">
-            <h2>
-              You get <br>
-              any medicine <br>
-              on
-              <span>
-                10% discount
-              </span>
-
-            </h2>
-            <p>
-              It is a long established fact that a reader will be distracted by
-            </p>
-            <div>
-              <a href="">
-                Buy Now
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-7 col-md-5">
-          <div class="img-box">
-            <img src="{% static 'images/medicines.jpg' %}" alt="">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- end discount section -->
-
-  <!-- health section -->
-
-  <section class="health_section layout_padding">
-    <div class="health_carousel-container">
-      <h2 class="text-uppercase">
-        Medicine & Health
-
-      </h2>
-      <div class="carousel-wrap layout_padding2">
-        <div class="owl-carousel">
-          <div class="item">
-            <div class="box">
-              <div class="btn_container">
-                <a href="">
-                  Buy Now
-                </a>
-              </div>
-              <div class="img-box">
-                <img src="{% static 'images/p-1.jpg' %}" alt="">
-              </div>
-              <div class="detail-box">
-                <div class="star_container">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star-o" aria-hidden="true"></i>
-
-                </div>
-                <div class="text">
-                  <h6>
-                    Health
-                  </h6>
-                  <h6 class="price">
-                    <span>
-                      $
-                    </span>
-                    30
-                  </h6>
-                </div>
-              </div>
-            </div>
-            <div class="box">
-              <div class="btn_container">
-                <a href="">
-                  Buy Now
-                </a>
-              </div>
-              <div class="img-box">
-                <img src="{% static 'images/p-5.jpg' %}" alt="">
-              </div>
-              <div class="detail-box">
-                <div class="star_container">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star-o" aria-hidden="true"></i>
-
-                </div>
-                <div class="text">
-                  <h6>
-                    Health
-                  </h6>
-                  <h6 class="price">
-                    <span>
-                      $
-                    </span>
-                    30
-                  </h6>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="box">
-              <div class="btn_container">
-                <a href="">
-                  Buy Now
-                </a>
-              </div>
-              <div class="img-box">
-                <img src="{% static 'images/p-2.jpg' %}" alt="">
-              </div>
-              <div class="detail-box">
-                <div class="star_container">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star-o" aria-hidden="true"></i>
-
-                </div>
-                <div class="text">
-                  <h6>
-                    Health
-                  </h6>
-                  <h6 class="price">
-                    <span>
-                      $
-                    </span>
-                    30
-                  </h6>
-                </div>
-              </div>
-            </div>
-            <div class="box">
-              <div class="btn_container">
-                <a href="">
-                  Buy Now
-                </a>
-              </div>
-              <div class="img-box">
-                <img src="{% static 'images/p-5.jpg' %}" alt="">
-              </div>
-              <div class="detail-box">
-                <div class="star_container">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star-o" aria-hidden="true"></i>
-
-                </div>
-                <div class="text">
-                  <h6>
-                    Health
-                  </h6>
-                  <h6 class="price">
-                    <span>
-                      $
-                    </span>
-                    30
-                  </h6>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="box">
-              <div class="btn_container">
-                <a href="">
-                  Buy Now
-                </a>
-              </div>
-              <div class="img-box">
-                <img src="{% static 'images/p-3.jpg' %}" alt="">
-              </div>
-              <div class="detail-box">
-                <div class="star_container">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star-o" aria-hidden="true"></i>
-
-                </div>
-                <div class="text">
-                  <h6>
-                    Health
-                  </h6>
-                  <h6 class="price">
-                    <span>
-                      $
-                    </span>
-                    30
-                  </h6>
-                </div>
-              </div>
-            </div>
-            <div class="box">
-              <div class="btn_container">
-                <a href="">
-                  Buy Now
-                </a>
-              </div>
-              <div class="img-box">
-                <img src="{% static 'images/p-5.jpg' %}" alt="">
-              </div>
-              <div class="detail-box">
-                <div class="star_container">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star-o" aria-hidden="true"></i>
-
-                </div>
-                <div class="text">
-                  <h6>
-                    Health
-                  </h6>
-                  <h6 class="price">
-                    <span>
-                      $
-                    </span>
-                    30
-                  </h6>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="box">
-              <div class="btn_container">
-                <a href="">
-                  Buy Now
-                </a>
-              </div>
-              <div class="img-box">
-                <img src="{% static 'images/p-4.jpg' %}" alt="">
-              </div>
-              <div class="detail-box">
-                <div class="star_container">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star-o" aria-hidden="true"></i>
-
-                </div>
-                <div class="text">
-                  <h6>
-                    Health
-                  </h6>
-                  <h6 class="price">
-                    <span>
-                      $
-                    </span>
-                    30
-                  </h6>
-                </div>
-              </div>
-            </div>
-            <div class="box">
-              <div class="btn_container">
-                <a href="">
-                  Buy Now
-                </a>
-              </div>
-              <div class="img-box">
-                <img src="{% static 'images/p-5.jpg' %}" alt="">
-              </div>
-              <div class="detail-box">
-                <div class="star_container">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star-o" aria-hidden="true"></i>
-
-                </div>
-                <div class="text">
-                  <h6>
-                    Health
-                  </h6>
-                  <h6 class="price">
-                    <span>
-                      $
-                    </span>
-                    30
-                  </h6>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="health_carousel-container">
-      <h2 class="text-uppercase">
-        Vitamins & Supplements
-
-
-      </h2>
-      <div class="carousel-wrap layout_padding2">
-        <div class="owl-carousel owl-2">
-          <div class="item">
-            <div class="box">
-              <div class="btn_container">
-                <a href="">
-                  Buy Now
-                </a>
-              </div>
-              <div class="img-box">
-                <img src="{% static 'images/p-6.jpg' %}" alt="">
-              </div>
-              <div class="detail-box">
-                <div class="star_container">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star-o" aria-hidden="true"></i>
-
-                </div>
-                <div class="text">
-                  <h6>
-                    Medicine
-                  </h6>
-                  <h6 class="price">
-                    <span>
-                      $
-                    </span>
-                    30
-                  </h6>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="box">
-              <div class="btn_container">
-                <a href="">
-                  Buy Now
-                </a>
-              </div>
-              <div class="img-box">
-                <img src="{% static 'images/p-6.jpg' %}" alt="">
-              </div>
-              <div class="detail-box">
-                <div class="star_container">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star-o" aria-hidden="true"></i>
-
-                </div>
-                <div class="text">
-                  <h6>
-                    Medicine
-                  </h6>
-                  <h6 class="price">
-                    <span>
-                      $
-                    </span>
-                    30
-                  </h6>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="box">
-              <div class="btn_container">
-                <a href="">
-                  Buy Now
-                </a>
-              </div>
-              <div class="img-box">
-                <img src="{% static 'images/p-6.jpg' %}" alt="">
-              </div>
-              <div class="detail-box">
-                <div class="star_container">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star-o" aria-hidden="true"></i>
-
-                </div>
-                <div class="text">
-                  <h6>
-                    Medicine
-                  </h6>
-                  <h6 class="price">
-                    <span>
-                      $
-                    </span>
-                    30
-                  </h6>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="box">
-              <div class="btn_container">
-                <a href="">
-                  Buy Now
-                </a>
-              </div>
-              <div class="img-box">
-                <img src="{% static 'images/p-6.jpg' %}" alt="">
-              </div>
-              <div class="detail-box">
-                <div class="star_container">
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star" aria-hidden="true"></i>
-                  <i class="fa fa-star-o" aria-hidden="true"></i>
-
-                </div>
-                <div class="text">
-                  <h6>
-                    Medicine
-                  </h6>
-                  <h6 class="price">
-                    <span>
-                      $
-                    </span>
-                    30
-                  </h6>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="d-flex justify-content-center">
-      <a href="">
-        See more
-      </a>
-    </div>
-  </section>
-
-  <!-- end health section -->
 
   <!-- about section -->
   <section class="about_section layout_padding">
@@ -867,12 +396,11 @@
       </div>
       <div class="detail-box">
         <p>
-          It is a long established fact that a reader will be distracted by the readable content of a page when looking
-          at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
-          opposed to using 'Content here, content here', making it
+          ClarityMed is a hospital management platform that simplifies communication and workflow for doctors, patients, and receptionists.
+          Thank you for choosing ClarityMed.
         </p>
         <div class="d-flex justify-content-center">
-          <a href="">
+          <a href="about">
             Read More
           </a>
         </div>
@@ -882,7 +410,7 @@
 
   <!-- end about section -->
 
-  <!-- client section -->
+  <!-- client section 
   <section class="client_section layout_padding">
     <div class="container">
       <div class="custom_heading-container ">
@@ -983,149 +511,15 @@
 
     </div>
   </section>
-  <!-- end client section -->
+ end client section -->
 
-  <!-- contact section -->
-  <section class="contact_section">
-    <div class="container">
-      <div class="row">
-        <div class="custom_heading-container ">
-          <h2>
-            Request A call back
-          </h2>
-        </div>
-      </div>
-    </div>
-    <div class="container layout_padding2">
-      <div class="row">
-        <div class="col-md-5">
-          <div class="form_contaier">
-            <form>
-              <div class="form-group">
-                <label for="exampleInputName1">Name</label>
-                <input type="text" class="form-control" id="exampleInputName1">
-              </div>
-              <div class="form-group">
-                <label for="exampleInputNumber1">Phone Number</label>
-                <input type="text" class="form-control" id="exampleInputNumber1">
-              </div>
-
-              <div class="form-group">
-                <label for="exampleInputEmail1">Email </label>
-                <input type="email" class="form-control" id="exampleInputEmail1">
-              </div>
-              <div class="form-group ">
-                <label for="inputState">Select medicine</label>
-                <select id="inputState" class="form-control">
-                  <option selected>Medicine 1</option>
-                  <option selected>Medicine 2</option>
-                  <option selected>Medicine 3</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="exampleInputMessage">Message</label>
-                <input type="text" class="form-control" id="exampleInputMessage">
-              </div>
-              <button type="submit" class="">Send</button>
-            </form>
-          </div>
-        </div>
-        <div class="col-md-7">
-          <div class="detail-box">
-            <h3>
-              Get Now Medicines
-            </h3>
-            <p>
-              There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
-              in some form, by injected humour, or randomised words which don't look even slightly believable.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- end contact section -->
-
-  <!-- info section -->
-  <section class="info_section layout_padding2">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3">
-          <div class="info_contact">
-            <h4>
-              Contact
-            </h4>
-            <div class="box">
-              <div class="img-box">
-                <img src="{% static '/telephone-symbol-button.png' %}" alt="">
-              </div>
-              <div class="detail-box">
-                <h6>
-                  +01 123567894
-                </h6>
-              </div>
-            </div>
-            <div class="box">
-              <div class="img-box">
-                <img src="{% static 'images/email.png' %}" alt="">
-              </div>
-              <div class="detail-box">
-                <h6>
-                  demo@gmail
-                </h6>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="info_menu">
-            <h4>
-              Menu
-            </h4>
-            <ul class="navbar-nav  ">
-              <li class="nav-item active">
-                <a class="nav-link" href="index">Home <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about"> About </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="medicine"> Medicine </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="buy"> Online Buy </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="info_news">
-            <h4>
-              newsletter
-            </h4>
-            <form action="">
-              <input type="text" placeholder="Enter Your email">
-              <div class="d-flex justify-content-center justify-content-end mt-3">
-                <button>
-                  Subscribe
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- end info section -->
+  
 
   <!-- footer section -->
   <section class="container-fluid footer_section">
     <p>
-      &copy; 2019 All Rights Reserved. Design by
-      <a href="https://html.design/">Free Html Templates</a>
+      &copy; 2023 All Rights Reserved. Design by
+       Omer Rozales, Amit Shitrit and Tomer Netzer
     </p>
   </section>
   <!-- footer section -->

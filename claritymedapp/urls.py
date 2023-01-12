@@ -47,7 +47,6 @@ urlpatterns = [
 
     #----------RECEP----------#
     path('dashboardrecep', views.dashboardrecep, name="dashboardrecep"),
-    path('dashrecepinfo', views.dashrecepinfo, name="dashrecepinfo"),
     path('dashrecepclient', views.dashrecepclient, name="dashrecepclient"),
     path('dashrecephelp', views.dashrecephelp, name="dashrecephelp"),
     path('dashrecepreview', views.dashrecepreview, name="dashrecepreview"),

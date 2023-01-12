@@ -128,11 +128,11 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR , "static"),
 
-    'C:/GitHub/ClarityMed/claritymedapp/static',
+    'C:/GitHub/ClarityMed/claritymedapp/',
 
-    'D:/GitHub/ClarityMed/claritymedapp/static',
+    'D:/GitHub/ClarityMed/claritymedapp/',
 
-    'D:/PROJECT/ClarityMed/claritymedapp/static',
+    'D:/PROJECT/ClarityMed/claritymedapp/',
 
 ]
 
