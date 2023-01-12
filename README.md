@@ -3,7 +3,7 @@
 
 ClarityMed is a hospital services website designed to provide a smooth and convenient experience for patients, doctors and receptionists. The site offers a variety of features to make it easier for patients to access the medical care they need, including scheduling appointments, treatment status, etc.
 
-Overall, ClarityMed aims to provide a comprehensive healthcare management solution, providing access to valuable medical information and resources to all parties involved, which will improve the overall healthcare experience for patients, while helping healthcare providers better manage their patients and services. .
+Overall, ClarityMed aims to provide a comprehensive healthcare management solution, providing access to valuable medical information and resources to all parties involved, which will improve the overall healthcare experience for patients, while helping healthcare providers better manage their patients and services. 
 
 
 ## Run Locally
